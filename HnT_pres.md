@@ -1,6 +1,6 @@
 ## 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8*
 
-[https://github.com/thoppe/baby_neural_nets](https://github.com/thoppe/baby_neural_nets)
+Source Code: [https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8](https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8)
 ----------
 [TRAVIS HOPPE](http://thoppe.github.io/), [@metasemantic](https://twitter.com/metasemantic)
 
@@ -8,7 +8,7 @@
   
 ====
 
-## Neural Networks and target shapes
+## Starter
 
 ====
 
