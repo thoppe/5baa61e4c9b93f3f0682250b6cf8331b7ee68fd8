@@ -38,14 +38,17 @@ Source Code: [https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
 !(images/code_cycle.mp4) <<height:300px;transparent>> (~ 8 millon hashes per second)
 
 
+====+
 
+  
 # but that's no fun ...
 ====
 
 # RNN-LSTM
 Recurrent Reural Network with Long Short-Term Memory
-Predict *linguistic patterns* in text from an observed dataset ...  
-
+With NLP? Generate *new text* from observed *linguistic patterns*
+====+  
+<br><br>
 ### prior work: [arXiV title generator](http://thoppe.github.io/RNN_science_titles/HnT_RNN_arXiv.html#/)
 Hack && Tell Round 26: The Curious Camaraderie of Code
     1. A User-Friendly Code to Diagnose Chromospheric Plasmas
@@ -67,7 +70,34 @@ Hack && Tell Round 26: The Curious Camaraderie of Code
 
 ====
 
-What does text look like?
+## Passwords?
+dantes1234, mif135, Jenna015, salidams, karla0304, fia0202, kpn1954, sairames,
+j200767, 8646463, csumit, zamman13, jackdosn, mattymatt, 2439nc, lymic123, 
+mca15a, hkumar, merger2011, mick462, 9743399, 28272408, 61166s, adh1323, 
+betapapa, shaq1979, 1222xxxx, castane12, emmaan1, mazdabil, 4611av, tekereg,
+9426469, 1111yess, kalgar01, pjcent, gmom1995, zarma38, adj2911, Lou7010, 
+ASOSCI, jonavera, meeguin, melinders, yopam2, hk6325, lairree, 8948748, 
+pat6963, 24002933, girls1975, madia2309, jajax5, dec1560, 99923070, bedrule,
+karennick, powernap, pascully, bones987, sazza47, wg3740, smarty333, 17507711,
+mcnabu, tim1664, b192021, 1tailer1, ivanmasa, badgal10, jasper1225, FM1949, 
+Porgie1, bookiebo, wj2188, pikolo11, 19768030, jan271971, ric2929, mstg01,
+lled44, lspook, 1704653, madjan1969, cupidread, vick7500, kr3743, johnpeter1,
+friede03, karem311, 05011981, 4672376, livylin, mutumene, Claude25, kar7413,
+
+====
+
+### Most password "patterns" are predictable.
+!(images/so_dumb.mp4) <<height:400px;transparent>>
+
+Most common hash is `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8`
+which is "`password`". No, really. 176,120 accounts, or 1 out of every 360 people.
+
+  
+====
+
+### How it works
+
+!(images/flowchart.svg)  <<height:600px;transparent>>
 
 
 ====
