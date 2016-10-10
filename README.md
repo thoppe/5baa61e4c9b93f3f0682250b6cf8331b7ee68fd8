@@ -1,7 +1,6 @@
-### 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
-(SHA-1 hash of "password")
+# 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
+Cracking passwords with deep learning
 ---------------------------------------------------------------------------
-  
 
 Back in 2012, LinkedIn suffered a hack that leaked (presumably) the entire database of user emails and passwords. The passwords were not stored in plain-text, they were hashed with (SHA-1)[https://en.wikipedia.org/wiki/SHA-1] and left (unsalted)[https://en.wikipedia.org/wiki/Salt_(cryptography)]. This means that the passwords were put through a one-way cryptographic function that left the password unknown unless guessed exactly. For example, instead of:
 
