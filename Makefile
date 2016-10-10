@@ -1,4 +1,4 @@
-title  = "Baby Neural Nets"
+title  = "Cracking passwords with deep learning"
 author = "Travis Hoppe"
 
 target      = "HnT_pres.md"
