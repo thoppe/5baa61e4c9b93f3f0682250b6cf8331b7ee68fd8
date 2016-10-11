@@ -34,7 +34,7 @@ We utilize a simple RNN-LSTM (Recurrent Neural Network with Long Short-Term Memo
 This RNN reads from a [set of starter passwords](starter_passwords.txt) and tries to predict new passwords from the linguistic patterns observed.
 These passwords are then validated against the LinkedIn dump and the RNN is re-trained.
 
-![](images/flowchart.svg)
+![](images/flowchart.png)
 
 To improve sampling speed, we sample from the RNN using hundreds of independent parallel streams.
 This avoids the expensive overhead of copying to the GPU for each character sampled.
