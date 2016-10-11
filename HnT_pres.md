@@ -112,13 +112,13 @@ friede03, karem311, 05011981, 4672376, livylin, mutumene, Claude25, kar7413,
 ====
 # Results
 
-### Started with *656,000* matching passwords
+### Started with *654,500* matching passwords
   
 ### Ran 6 cycles of validate/train/sample (1 day/cycle)
   
-### Generated *8,948,606* _new passwords_
+### Generated *8,943,093* _new passwords_
 
-### 1300% enrichment from starter passwords! 
+### ~1300% enrichment from starter passwords! 
 ====
 ### Most password "patterns" are predictable.
 !(images/so_dumb.mp4) <<height:400px;transparent>>
@@ -127,10 +127,13 @@ Most common hash is `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8`
 which is "`password`". No, really. 176,120 accounts, or 1 out of every 360 people. 
 ====
 
-## Irrelevant research question:
+## Irrelevant research questions:
 
 ### How many cycles would it take to
 ### train the RNN from _scratch_?
+
+### Can you sample extra long passwords
+### by biasing the sample step?
 
 ====
 
