@@ -42,10 +42,10 @@ Full implementation can be found in [src/model.py](src/model.py).
 
 ### Results
 
-+ Started with 654,500 matching passwords.
-+ Ran 6 cycles of validate/train/sample (1 day/cycle).
-+ Generated [**8,943,093** new passwords](generated_passwords.txt).
-+ ~1300% enrichment from starter passwords.
++ Started with [654,500 matching passwords](starter_passwords.txt)
++ Ran 6 cycles of validate/train/sample (1 day/cycle)
++ Generated [**8,943,093** new passwords](generated_passwords.txt)
++ ~1300% enrichment from starter passwords
 
 ### Password lists
 
@@ -58,6 +58,6 @@ Hack && Tell, Round 37: Cell Out (with DC NLP!) [presentation link](http://thopp
 
 ### Further reading
 
-Want to find more password dumps? Start here, [https://www.vigilante.pw/](https://www.vigilante.pw/]).
+Want to find more password dumps? Start here, [https://www.vigilante.pw/](https://www.vigilante.pw/])
 
-More reading about the source data can be found in this nice [Ars writeup](http://arstechnica.com/security/2016/06/how-linkedins-password-sloppiness-hurts-us-all/).
+More reading about the source data can be found in this nice [Ars writeup](http://arstechnica.com/security/2016/06/how-linkedins-password-sloppiness-hurts-us-all/)
