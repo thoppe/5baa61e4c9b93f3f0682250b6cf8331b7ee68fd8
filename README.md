@@ -44,7 +44,7 @@ Full implementation can be found in [src/model.py](src/model.py).
 
 + Started with 654,500 matching passwords.
 + Ran 6 cycles of validate/train/sample (1 day/cycle).
-+ Generated [**8,943,093** _new passwords_](generated_passwords.txt).
++ Generated [**8,943,093** new passwords](generated_passwords.txt).
 + ~1300% enrichment from starter passwords.
 
 ### Password lists
