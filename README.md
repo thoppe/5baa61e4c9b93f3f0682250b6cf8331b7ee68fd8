@@ -1,13 +1,12 @@
 # 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
-  
 Cracking passwords with deep learning
----------------------------------------------------------------------------
+ 
 Hack && Tell [presentation link](http://thoppe.github.io/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8/HnT_pres.html)
----------------------------------------------------------------------------
 
-
-
-Back in 2012, LinkedIn suffered a hack that leaked (presumably) the entire database of user emails and passwords. The passwords were not stored in plain-text, they were hashed with [SHA-1](https://en.wikipedia.org/wiki/SHA-1) and left [unsalted](https://en.wikipedia.org/wiki/Salt_(cryptography)). This means that the passwords were put through a one-way cryptographic function that left the password unknown unless guessed exactly. For example, instead of:
+Back in 2012, LinkedIn suffered a hack that leaked (presumably) the entire database of user emails and passwords.
+The passwords were not stored in plain-text, they were hashed with [SHA-1](https://en.wikipedia.org/wiki/SHA-1) and left [unsalted](https://en.wikipedia.org/wiki/Salt_(cryptography)).
+This means that the passwords were put through a one-way cryptographic function that left the password unknown unless guessed exactly.
+For example, instead of:
 
     amsoawen@rotterdam.nl, cat
     mankmrx@yahoo.com, password
@@ -28,3 +27,8 @@ Interested in more password dumps? A comprehensive list can be found at [https:/
 More reading about the source data can be found here:
 
 http://arstechnica.com/security/2016/06/how-linkedins-password-sloppiness-hurts-us-all/
+
+## Password lists
+
++ [starter_passwords.txt](starter_passwords.txt)
++ [generated_passwords.txt](generated_passwords.txt)
