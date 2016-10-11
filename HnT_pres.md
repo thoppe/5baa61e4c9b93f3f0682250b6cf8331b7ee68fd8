@@ -45,7 +45,7 @@
 ====
 
 # RNN-LSTM
-Recurrent Reural Network with Long Short-Term Memory
+Recurrent Neural Network with Long Short-Term Memory
 With NLP? Generate *new text* from observed *linguistic patterns*
 ====+  
 <br><br>
