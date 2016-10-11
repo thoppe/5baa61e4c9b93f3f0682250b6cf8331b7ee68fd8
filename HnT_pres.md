@@ -15,7 +15,7 @@
 ====
 
 ## In 2016, this database was found floating on the darkweb ... 
-(all 65 millon email addresses & passwords) 
+(all 65 million email addresses & passwords) 
 !(images/whoa.mp4) <<height:460px;transparent>> people be like...
 
 ====
@@ -49,7 +49,7 @@ Recurrent Neural Network with Long Short-Term Memory
 With NLP? Generate *new text* from observed *linguistic patterns*
 ====+  
 <br><br>
-### prior work: [arXiV title generator](http://thoppe.github.io/RNN_science_titles/HnT_RNN_arXiv.html#/)
+### prior work: [arXiv title generator](http://thoppe.github.io/RNN_science_titles/HnT_RNN_arXiv.html#/)
 Hack && Tell Round 26: The Curious Camaraderie of Code
     1. A User-Friendly Code to Diagnose Chromospheric Plasmas
     2. Shock Parameters in Astrophysics
@@ -91,7 +91,7 @@ friede03, karem311, 05011981, 4672376, livylin, mutumene, Claude25, kar7413,
 ## How it works (low level)
 
 ### 1. tensorflow + tflearn
-    g = tflearn.input_data(shape=[None, maxlen, len(char_idx)])
+    g = tflearn.input_data(shape=[None, maxlen, lenn(char_idx)])
     g = tflearn.lstm(g, layer_size, return_seq=True)
     g = tflearn.dropout(g, 0.5)
     g = tflearn.lstm(g, layer_size)
