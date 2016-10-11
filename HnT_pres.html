@@ -41,16 +41,15 @@
 	<section class="vertical-stack">
 <section   class="vertical-slide">
 <p>
-<h3>Cracking passwords with "deep learning"</h3></p>
+<h2>Cracking passwords</h2><h3>with bootstrapped deep learning</h3></p>
 <figure>
-    <video autoplay loop height="460px">  
+    <video autoplay loop height="480px">  
     <source src="images/man_code.mp4" type="video/mp4"> 
     </video>
     
     </figure>
-<br>
 <p>
-Source Code: <a href="https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8">https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8</a></p>
+<a href="https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8">https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8</a></p>
 <hr>
 <p>
 <a href="http://thoppe.github.io/">travis.hoppe</a>, <a href="https://twitter.com/metasemantic">@metasemantic</a></p>
@@ -81,7 +80,7 @@ Source Code: <a href="https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b
 <h2>In 2016, this database was found floating on the darkweb ...</h2>(all 65 millon email addresses & passwords)</p>
 <figure>
     <video autoplay loop height="460px">  
-    <source src="images/hate_hackers.mp4" type="video/mp4"> 
+    <source src="images/whoa.mp4" type="video/mp4"> 
     </video>
     <figcaption>people be like...</figcaption>
     </figure>
@@ -150,6 +149,62 @@ Source Code: <a href="https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b
 </section><section class="vertical-stack">
 <section   class="vertical-slide">
 <p>
+<h2>How it works (high level)</h2></p>
+<figure>
+    <a href="images/flowchart.svg">
+    <img class="transparent_image" src="images/flowchart.svg" height="600px">
+    </a>
+    
+    </figure>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>How it works (low level)</h2></p>
+<br>
+<p>
+<h3>1. tensorflow + tflearn</h3></p>
+<pre><code class=python>g = tflearn.input_data(shape=[None, maxlen, len(char_idx)])
+g = tflearn.lstm(g, layer_size, return_seq=True)
+g = tflearn.dropout(g, 0.5)
+g = tflearn.lstm(g, layer_size)
+g = tflearn.dropout(g, 0.5)
+g = tflearn.fully_connected(g, len(char_idx), activation='softmax')
+g = tflearn.regression(g,
+                       optimizer='adam',
+                       loss='categorical_crossentropy',
+                       learning_rate=0.001)</code></pre>
+<br>
+<p>
+<h3>2. Parallel sample RNNs in to avoid slow GPU copy</h3></p>
+<br>
+<p>
+<h3>3. Slow sample step still on CPU? Move to GPU?</h3></p>
+<pre><code class=python>def _sample(a, temperature=1.0):
+    a = np.log(a) / temperature
+    a = np.exp(a) / np.sum(np.exp(a))
+    return np.argmax(np.random.multinomial(1, a, 1))</code></pre>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h1>Results</h1></p>
+<br>
+<p>
+<h3>Started with <strong>656,000</strong> matching passwords</h3></p>
+<br>
+<p>
+<h3>Ran 6 cycles of validate/train/sample (1 day/cycle)</h3></p>
+<br>
+<p>
+<h3>Generated <strong>8,948,606</strong> <em>new passwords</em></h3></p>
+<br>
+<p>
+<h3>1300% enrichment from starter passwords!</h3></p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
 <h3>Most password "patterns" are predictable.</h3></p>
 <figure>
     <video autoplay loop height="400px">  
@@ -164,19 +219,18 @@ Most common hash is <code>5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8</code><br>whi
 </section><section class="vertical-stack">
 <section   class="vertical-slide">
 <p>
-<h3>How it works</h3></p>
+<h2>Irrelevant research question:</h2></p>
 <br>
-<figure>
-    <a href="images/flowchart.svg">
-    <img class="transparent_image" src="images/flowchart.svg" height="600px">
-    </a>
-    
-    </figure>
+<p>
+<h3>How many cycles would it take to</h3><h3>train the RNN from <em>scratch</em>?</h3></p>
 </section>
 </section><section class="vertical-stack">
 <section   class="vertical-slide">
 <p>
-<h1>Thanks, you!</h1>Say hello: <a href="https://twitter.com/metasemantic">@metasemantic</a></p>
+<h1>Thanks, you.</h1><h2>Say hello! <a href="https://twitter.com/metasemantic">@metasemantic</a></h2></p>
+<br>
+<p>
+All starter and generated passwords can be found on the github:<br><a href="https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8">https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8</a></p>
 </section>
 </section>
     </div></div>

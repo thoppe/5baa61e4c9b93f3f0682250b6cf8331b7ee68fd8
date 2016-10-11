@@ -1,7 +1,7 @@
-### Cracking passwords with "deep learning"
-!(images/man_code.mp4) <<height:460px;transparent>>
-
-Source Code: [https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8](https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8)
+## Cracking passwords
+### with bootstrapped deep learning
+!(images/man_code.mp4) <<height:480px;transparent>>
+[https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8](https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8)
 ----------
 [travis.hoppe](http://thoppe.github.io/), [@metasemantic](https://twitter.com/metasemantic)
   
@@ -16,7 +16,7 @@ Source Code: [https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
 
 ## In 2016, this database was found floating on the darkweb ... 
 (all 65 millon email addresses & passwords) 
-!(images/hate_hackers.mp4) <<height:460px;transparent>> people be like...
+!(images/whoa.mp4) <<height:460px;transparent>> people be like...
 
 ====
 
@@ -85,24 +85,57 @@ lled44, lspook, 1704653, madjan1969, cupidread, vick7500, kr3743, johnpeter1,
 friede03, karem311, 05011981, 4672376, livylin, mutumene, Claude25, kar7413,
 
 ====
+## How it works (high level)
+!(images/flowchart.svg)  <<height:600px;transparent>>
+====
+## How it works (low level)
 
+### 1. tensorflow + tflearn
+    g = tflearn.input_data(shape=[None, maxlen, len(char_idx)])
+    g = tflearn.lstm(g, layer_size, return_seq=True)
+    g = tflearn.dropout(g, 0.5)
+    g = tflearn.lstm(g, layer_size)
+    g = tflearn.dropout(g, 0.5)
+    g = tflearn.fully_connected(g, len(char_idx), activation='softmax')
+    g = tflearn.regression(g,
+                           optimizer='adam',
+                           loss='categorical_crossentropy',
+                           learning_rate=0.001)
+
+### 2. Parallel sample RNNs in to avoid slow GPU copy
+
+### 3. Slow sample step still on CPU? Move to GPU?
+    def _sample(a, temperature=1.0):
+        a = np.log(a) / temperature
+        a = np.exp(a) / np.sum(np.exp(a))
+        return np.argmax(np.random.multinomial(1, a, 1))
+====
+# Results
+
+### Started with *656,000* matching passwords
+  
+### Ran 6 cycles of validate/train/sample (1 day/cycle)
+  
+### Generated *8,948,606* _new passwords_
+
+### 1300% enrichment from starter passwords! 
+====
 ### Most password "patterns" are predictable.
 !(images/so_dumb.mp4) <<height:400px;transparent>>
 
 Most common hash is `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8`
-which is "`password`". No, really. 176,120 accounts, or 1 out of every 360 people.
-
-  
+which is "`password`". No, really. 176,120 accounts, or 1 out of every 360 people. 
 ====
 
-### How it works
+## Irrelevant research question:
 
-!(images/flowchart.svg)  <<height:600px;transparent>>
-
+### How many cycles would it take to
+### train the RNN from _scratch_?
 
 ====
 
-  
-        
-#  Thanks, you!
-Say hello: [@metasemantic](https://twitter.com/metasemantic)
+#  Thanks, you.
+## Say hello! [@metasemantic](https://twitter.com/metasemantic)
+
+All starter and generated passwords can be found on the github:
+[https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8](https://github.com/thoppe/5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8)
