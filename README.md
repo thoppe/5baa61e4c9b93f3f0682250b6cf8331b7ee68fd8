@@ -61,3 +61,5 @@ Hack && Tell, Round 37: Cell Out (with DC NLP!) [presentation link](http://thopp
 Want to find more password dumps? Start here, [https://www.vigilante.pw/](https://www.vigilante.pw/])
 
 More reading about the source data can be found in this nice [Ars writeup](http://arstechnica.com/security/2016/06/how-linkedins-password-sloppiness-hurts-us-all/)
+
+A [student project](https://www.hasanhaq.com/pass-rnn-1) that also used RNN-LSTM but with a slightly different approach.
